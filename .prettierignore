@@ -1,0 +1,52 @@
+# Dependencies
+node_modules
+
+# Next.js build output
+.next
+out
+
+# Production build
+build
+dist
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Package manager files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Coverage & reports
+coverage
+.report
+reports
+
+# Public assets you don't want formatted
+public
+!.public/**/*.js
+!.public/**/*.css
+
+# Generated files
+*.min.js
+*.min.css
+*.map
+
+# IDE / OS files
+.vscode
+.idea
+.DS_Store
+
+# Config snapshots
+.next-env.d.ts
+
+# Markdown build outputs
+**/CHANGELOG.md

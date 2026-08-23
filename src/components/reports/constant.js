@@ -1,0 +1,15 @@
+export const GMB_INSIGHTS_SUMMARY_LABELS = {
+  totalViews: 'Total Views',
+  desktopTotalViews: 'Desktop Total Views',
+  mobileTotalViews: 'Mobile Total Views',
+  totalMapViews: 'Total Map Views',
+  desktopMapViews: 'Desktop Map Views',
+  mobileMapViews: 'Mobile Map Views',
+  totalSearchViews: 'Total Search Views',
+  desktopSearchViews: 'Desktop Search Views',
+  mobileSearchViews: 'Mobile Search Views',
+  totalActions: 'Total Actions',
+  totalDrivingDirectionActions: 'Total Driving Direction Actions',
+  totalCallActions: 'Total Call Actions',
+  totalWebsiteActions: 'Total Website Actions',
+};
