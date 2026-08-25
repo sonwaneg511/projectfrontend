@@ -18,7 +18,7 @@ export function RatingStars({ value, onChange }) {
           >
             <Star
               className='w-5 h-5'
-              fill={active ? '#FDB022' : 'text-gray-900'}
+              fill={active ? 'var(--color-warning-400)' : 'text-gray-900'}
             />
           </span>
         );

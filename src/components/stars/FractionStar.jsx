@@ -24,7 +24,7 @@ export default function FractionStar({ rating }) {
         .fill(0)
         .map((_, i) => (
           <FullStar
-            fill='#F5F5F5'
+            fill='var(--color-gray-100)'
             className='w-4 h-4'
             key={`e-${i}`}
             size={16}

@@ -19,7 +19,7 @@ export const TabsList = React.forwardRef(
 
         // PRIMARY style
         variant === 'primary' &&
-          'inline-flex items-center h-9 gap-1 rounded-sm p-1 bg-white',
+          'inline-flex items-center h-9 gap-1 rounded-sm p-1 bg-(--tabs-bg)',
 
         // SECONDARY style
         variant === 'secondary' && 'inline-flex w-full h-10 -space-x-px',
@@ -38,9 +38,10 @@ const tabVariants = {
     transition-all
     
     text-gray-500
-    data-[state=active]:bg-white
-    data-[state=active]:text-gray-900
-    data-[state=active]:border border-gray-300
+    data-[state=active]:bg-brand-600
+    data-[state=active]:!text-white
+    data-[state=active]:border
+    data-[state=active]:!border-white
     cursor-pointer
   `,
 
@@ -48,20 +49,22 @@ const tabVariants = {
     font-semibold
     rounded-sm
     text-(--tabs-text)
-    data-[state=active]:bg-(--tabs-active-bg)
-    data-[state=active]:text-(--tabs-active-text)
+    data-[state=active]:bg-brand-600
+    data-[state=active]:!text-white
+    data-[state=active]:border
+    data-[state=active]:!border-white
     cursor-pointer
   `,
 
   secondary: `
     inline-block text-body bg-white border border-gray-300
-    hover:bg-gray-50/90 hover:text-heading
+    hover:bg-brand-50/90 hover:text-heading
     focus:ring-neutral-secondary-strong focus:outline-none
     font-semibold leading-5 text-sm px-4 py-2.5 shadow-xs cursor-pointer
     text-gray-700
-    data-[state=active]:bg-gray-200
-    data-[state=active]:text-gray-800
-    data-[state=active]:border-gray-300
+    data-[state=active]:bg-brand-600
+    data-[state=active]:!text-white
+    data-[state=active]:!border-white
   `,
 };
 

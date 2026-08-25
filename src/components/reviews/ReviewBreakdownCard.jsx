@@ -27,7 +27,7 @@ export default function PieChartCard({
   return (
     <Card className='p-0'>
       <CardHeader className='pb-2 p-6 flex flex-row items-center justify-between'>
-        <CardTitle className='text-base font-semibold text-[#181D27]'>
+        <CardTitle className='text-base font-semibold text-gray-900'>
           {title}
         </CardTitle>
         <MoreVertical className='text-gray-400 w-5 h-5 cursor-pointer' />

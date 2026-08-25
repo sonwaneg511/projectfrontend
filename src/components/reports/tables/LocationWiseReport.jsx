@@ -77,10 +77,10 @@ export const LocationWiseReportTable = () => {
     const value = Number(getValue()) || 0;
 
     const getColor = (score) => {
-      if (score >= 75) return '#17B26A'; // green
-      if (score >= 50) return '#2D75E3'; // blue
-      if (score >= 25) return '#F79009'; // orange
-      return '#F04438'; // red
+      if (score >= 75) return 'var(--color-success-500)'; // green
+      if (score >= 50) return 'var(--color-brand-600)'; // blue
+      if (score >= 25) return 'var(--color-warning-500)'; // orange
+      return 'var(--color-error-500)'; // red
     };
 
     const color = getColor(value);

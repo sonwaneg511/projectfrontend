@@ -276,7 +276,7 @@ function NavItem({ icon: Icon, href, label }) {
                 <Icon
                   className={cn(
                     'h-5 w-5 shrink-0',
-                    isActive ? 'text-white' : 'text-[#A4A7AE]'
+                    isActive ? 'text-white' : 'text-gray-400'
                   )}
                 />
                 <span className='group-data-[collapsible=icon]:hidden'>{label}</span>

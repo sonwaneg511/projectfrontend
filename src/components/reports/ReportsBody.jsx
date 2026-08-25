@@ -30,7 +30,7 @@ export const ReportsBody = () => {
           variant={'report'}
         />
         <Button variant={'primary'}>
-          <Share size={20} color='#97CDF9' /> Export Report
+          <Share size={20} color='var(--color-brand-300)' /> Export Report
         </Button>
       </div>
       {selectedSection === '#reviews' ? (

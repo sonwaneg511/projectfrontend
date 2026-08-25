@@ -139,7 +139,7 @@ export default function ReviewItem({ review, platform }) {
                       disabled={!reply.trim() || isPending}
                     >
                       {isPending ? 'Submitting…' : 'Submit'}
-                      <CornerDownLeft size={20} color='#97CDF9' />
+                      <CornerDownLeft size={20} color='var(--color-brand-300)' />
                     </Button>
                     <Button variant='secondary' onClick={handleCancel}>
                       Cancel

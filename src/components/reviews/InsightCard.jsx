@@ -18,20 +18,20 @@ export default function InsightCard({
         }`}
       >
         <div className='flex items-start justify-between mb-5'>
-          <div className='w-12 h-12 rounded-full bg-[#DCFAE6] flex items-center justify-center'>
-            <TrendUpIcon className='text-[#079455] w-6 h-6' />
+          <div className='w-12 h-12 rounded-full bg-success-100 flex items-center justify-center'>
+            <TrendUpIcon className='text-success-600 w-6 h-6' />
           </div>
           {variation === 'lg' && (
             <div className='flex items-center gap-2'>
-              <MoreVertical color='#A4A7AE' />
+              <MoreVertical color='var(--color-gray-400)' />
             </div>
           )}
         </div>
         <div>
-          <p className='text-sm text-[#535862] mb-2 fw-medium'>{title}</p>
+          <p className='text-sm text-gray-600 mb-2 fw-medium'>{title}</p>
           {/* Value */}
           <div className='flex justify-between'>
-            <h4 className='text-3xl font-semibold mt-1 text-[#181D27]'>
+            <h4 className='text-3xl font-semibold mt-1 text-gray-900'>
               {value}
             </h4>
 

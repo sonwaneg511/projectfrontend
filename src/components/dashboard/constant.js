@@ -298,4 +298,5 @@ export const DASHBOARD_DATA = {
   },
 };
 
-export const PIE_COLORS = ['#75E0A7', '#F27B45', '#D5D7DA']; // Positive, Negative, Neutral
+// TODO: no design token exists for '#F27B45' (Negative) — needs manual review
+export const PIE_COLORS = ['var(--color-success-300)', '#F27B45', 'var(--color-gray-300)']; // Positive, Negative, Neutral

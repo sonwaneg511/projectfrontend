@@ -22,7 +22,7 @@ export const CampaignsHeader = () => {
         </Button> */}
         <Button variant={'primary'} asChild>
           <Link href={'/create-campaign'}>
-            <PlusIcon className='text-[#97CDF9]' size={20} />
+            <PlusIcon className='text-brand-300' size={20} />
             <span>Create Campaign</span>
           </Link>
         </Button>

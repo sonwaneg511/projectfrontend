@@ -42,7 +42,7 @@ export const DashboardTabs = ({ value, setValue, variant = 'dashboard' }) => {
               key={tab.label}
               value={tab.value}
               className={
-                'h-9 border-none data-[state=active]:ring-1 data-[state=active]:ring-gray-300 data-[state=active]:text-gray-700'
+                'h-9 border-none data-[state=active]:ring-1 data-[state=active]:ring-brand-400'
               }
               asChild
             >

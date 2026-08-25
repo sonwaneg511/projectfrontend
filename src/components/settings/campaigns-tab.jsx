@@ -433,7 +433,7 @@ const CampaignDataTable = () => {
 
   return (
     <DataTableProvider table={table} className={'gap-0'}>
-      <DataTableHeader className={'bg-[#FAFAFA] p-4 border-b border-[#E9EAEB]'}>
+      <DataTableHeader className={'bg-gray-50 p-4 border-b border-gray-200'}>
         <DataTableSearch placeholder={'Search'} />
       </DataTableHeader>
       <DataTableWrapper

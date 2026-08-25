@@ -15,7 +15,7 @@ export const UsersHeader = () => {
       </div>
       <Button variant={'primary'} asChild>
         <Link href={'/create-user?from=users'}>
-          <PlusIcon className='text-[#97CDF9]' size={20} />
+          <PlusIcon className='text-brand-300' size={20} />
           <span>Add User</span>
         </Link>
       </Button>

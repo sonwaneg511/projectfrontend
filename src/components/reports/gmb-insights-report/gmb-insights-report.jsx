@@ -366,7 +366,7 @@ export const GmbInsightsReports = () => {
           <AccordionTrigger
             asChild
             className={
-              'py-5 px-6 hover:bg-transparent rounded-none border-b border-[#E9EAEB]'
+              'py-5 px-6 hover:bg-transparent rounded-none border-b border-gray-200'
             }
           >
             <DashboardSectionHeader className={'px-0 border-none py-0'}>

@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils';
 export const AutofillWithAiIcon = ({
   className,
   size = 16,
-  stroke = '#A4A7AE',
+  stroke = 'var(--color-gray-400)',
   ...props
 }) => {
   return (

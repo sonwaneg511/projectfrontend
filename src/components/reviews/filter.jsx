@@ -19,6 +19,7 @@ export const ReviewsFilter = ({
       locationData={locationData}
       locationFilters={locationFilters}
       onLocationChange={onLocationChange}
+      showFacebookTab={false}
     />
   );
 };

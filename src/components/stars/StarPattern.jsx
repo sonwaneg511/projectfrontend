@@ -9,7 +9,7 @@ export default function StarPattern({ count, secondaryColor }) {
         <Star
           key={i}
           className='w-4 h-4'
-          fill={i < count ? '#FDB022' : secondaryColor}
+          fill={i < count ? 'var(--color-warning-400)' : secondaryColor}
         />
       ))}
     </div>

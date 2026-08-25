@@ -15,7 +15,7 @@ export const LocationsHeader = () => {
       </div>
       <Button variant={'primary'} asChild>
         <Link prefetch={false} href={'/location-create'}>
-          <PlusIcon size={20} className='text-[#97CDF9]' />
+          <PlusIcon size={20} className='text-brand-300' />
           <span>Add Locations</span>
         </Link>
       </Button>

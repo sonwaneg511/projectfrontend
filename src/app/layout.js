@@ -1,6 +1,5 @@
 import { Toaster } from '@/components/ui/sonner';
 import '@styles/globals.css';
-import '@styles/typography.css';
 import { Inter, Manrope } from 'next/font/google';
 import { Providers } from './providers';
 import { SessionHandler } from './session-handler';

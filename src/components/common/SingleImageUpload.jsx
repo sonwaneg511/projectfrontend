@@ -4,8 +4,8 @@ import { toast } from 'sonner';
 import { Label } from '@/components/ui/label';
 import { ALLOWED_IMAGE_TYPES } from '@/constants/constants';
 
-export default function SingleImageUpload({ onChange }) {
-  const [image, setImage] = useState(null);
+export default function SingleImageUpload({ onChange, value }) {
+  const [image, setImage] = useState(value || null);
   const fileInputRef = useRef(null);
 
   const handleFile = (file) => {
@@ -80,7 +80,7 @@ export default function SingleImageUpload({ onChange }) {
         </div>
       ) : (
         <div className='relative w-36 h-32 rounded-lg border border-gray-200 overflow-hidden bg-gray-50'>
-          {/** biome-ignore lint/performance/noImgElement: <explanation> */}
+          {/** biome-ignore lint/performance/noImgElement: preview only */}
           <img
             src={image}
             alt='Preview'

@@ -12,7 +12,7 @@ export default function Header() {
       <div className='p-6 sticky top-0 z-10 bg-white border-b'>
         <div className='flex items-center gap-3'>
           <Button variant='secondary' onClick={() => router.back()}>
-            <ArrowLeft color='#A4A7AE' size={20} /> Back
+            <ArrowLeft color='var(--color-gray-400)' size={20} /> Back
           </Button>
           <div>
             <h1 className='text-2xl font-semibold font-body text-gray-900'>

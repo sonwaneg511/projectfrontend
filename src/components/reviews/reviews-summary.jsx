@@ -6,9 +6,9 @@ import TotalReviewsCard from './TotalReviewGraph';
 
 export const ReviewsSummary = memo(({ reviewInsightData, platform }) => {
   const ReviewBreakdownColor = {
-    Positive: '#75E0A7',
+    Positive: 'var(--color-success-300)',
     Negative: '#F27B45',
-    Neutral: '#D5D7DA',
+    Neutral: 'var(--color-gray-300)',
   };
 
   const normalizeSentiment = (data) => [

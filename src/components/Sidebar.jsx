@@ -14,6 +14,7 @@ import {
   ReviewsIcon,
   SettingsIcon,
   UsersIcon,
+  MicrositesIcon
 } from '@/assets/icons/icons.jsx';
 import {
   Tooltip,
@@ -40,6 +41,7 @@ const mainMenu = [
   { label: 'Reviews', icon: ReviewsIcon, href: '/reviews' },
   { label: 'Posts', icon: PostsIcon, href: '/posts' },
   { label: 'Locations', icon: LocationIcon, href: '/locations' },
+  { label: 'Microsites', icon: MicrositesIcon, href: '/microsites' },
   { label: 'Reports', icon: ReportIcon, href: '/reports' },
 ];
 
@@ -80,7 +82,7 @@ export default function Sidebar() {
   };
 
   return (
-    <aside className='w-60 h-screen bg-white border-r flex flex-col'>
+    <aside className='w-60 h-screen bg-black flex flex-col'>
       {/* Brand Section */}
       {/* <Image
         src='/Logo.png'
@@ -90,11 +92,11 @@ export default function Sidebar() {
         className=' m-5'
         priority={true}
       /> */}
-      <TempLogo width={139} height={32} className='m-2' />
+      <TempLogo width={139} height={32} className='m-2' variant='white' />
 
       {/* Main Navigation */}
       <nav className='flex-1 overflow-y-auto py-3 px-4'>
-        <p className='text-xs mb-2 fw-bold text-gray-500'>GENERAL</p>
+        <p className='text-xs mb-2 fw-bold text-white/50'>GENERAL</p>
 
         <div className='space-y-1'>
           {mainMenu.map((item) => {
@@ -106,16 +108,16 @@ export default function Sidebar() {
                 href={item.href}
                 prefetch={false}
                 className={cn(
-                  'flex items-center font-medium gap-2.5 px-3 py-2 rounded-md text-sm transition-colors duration-300 text-[#414651] border border-transparent',
+                  'flex items-center font-medium gap-2.5 px-3 py-2 rounded-md text-sm transition-colors duration-300 text-white border border-transparent',
                   isActive
-                    ? 'bg-[#F0F7FE] border-[#C2E0FB] text-[#2D75E3]'
-                    : ' hover:bg-[#F0F7FE] text-[#414651]'
+                    ? 'bg-brand-600 border-white/20'
+                    : 'hover:bg-brand-200/10 text-white/90'
                 )}
               >
                 <item.icon
                   className={cn(
                     'w-5 h-5',
-                    isActive ? 'text-brand-600' : 'text-[#A4A7AE]'
+                    isActive ? 'text-white' : 'text-white/60'
                   )}
                 />
 
@@ -128,7 +130,7 @@ export default function Sidebar() {
 
       {/* User Section */}
       <div className='px-3 py-4'>
-        <p className='text-xs mb-2 fw-bold text-[#717680]'>Other Links</p>
+        <p className='text-xs mb-2 fw-bold text-white/50'>Other Links</p>
 
         <div className='space-y-1'>
           {filteredOtherMenus.map((item) => {
@@ -140,16 +142,16 @@ export default function Sidebar() {
                 href={item.href}
                 prefetch={false}
                 className={cn(
-                  'flex items-center fw-semibold gap-2.5 px-3 py-2 rounded-md text-sm transition-all text-[#414651]',
+                  'flex items-center fw-semibold gap-2.5 px-3 py-2 rounded-md text-sm transition-all text-white',
                   isActive
-                    ? 'bg-[#F0F7FE] font-medium border border-[#C2E0FB] text-brand-600'
-                    : ' hover:bg-[#F0F7FE] text-[#414651]'
+                    ? 'bg-white/15 font-medium border border-white/20'
+                    : 'hover:bg-white/10 text-white/80'
                 )}
               >
                 <item.icon
                   className={cn(
                     'w-5 h-5',
-                    isActive ? 'text-brand-600' : 'text-[#A4A7AE]'
+                    isActive ? 'text-white' : 'text-white/60'
                   )}
                 />
                 {item.label}
@@ -160,7 +162,7 @@ export default function Sidebar() {
       </div>
       <DropdownMenu>
         <DropdownMenuTrigger>
-          <div className='mb-5 mx-4 p-3 border rounded-2xl flex items-center gap-2 justify-between cursor-pointer'>
+          <div className='mb-5 mx-4 p-3 border border-white/15 hover:bg-white/5 rounded-2xl flex items-center gap-2 justify-between cursor-pointer'>
             <div className='w-10 h-10 rounded-full overflow-hidden flex items-center justify-center'>
               {/** biome-ignore lint/performance/noImgElement: <> */}
               <img
@@ -178,7 +180,7 @@ export default function Sidebar() {
                   {/* User ID */}
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <p className='text-sm font-medium truncate max-w-25 cursor-default'>
+                      <p className='text-sm font-medium text-white truncate max-w-25 cursor-default'>
                         {userDetails?.user_id || '-'}
                       </p>
                     </TooltipTrigger>
@@ -190,7 +192,7 @@ export default function Sidebar() {
                   {/* Email */}
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <p className='text-xs text-muted-foreground truncate max-w-25 cursor-default'>
+                      <p className='text-xs text-white/50 truncate max-w-25 cursor-default'>
                         {userDetails?.email}
                       </p>
                     </TooltipTrigger>
@@ -201,7 +203,7 @@ export default function Sidebar() {
                 </div>
               </TooltipProvider>
 
-              <ProfileChevron className={cn('w-5 h-5')} />
+              <ProfileChevron className={cn('w-5 h-5 text-white/70')} />
             </div>
           </div>
         </DropdownMenuTrigger>

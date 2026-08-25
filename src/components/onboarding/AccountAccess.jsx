@@ -134,7 +134,7 @@ export default function AccountAccess() {
           className='text-sm font-semibold text-gray-700'
         >
           See How to Provide Access
-          <CircleQuestionMark className='h-4 w-4' color='#A4A7AE' />
+          <CircleQuestionMark className='h-4 w-4' color='var(--color-gray-400)' />
         </Button>
       </div>
     </div>

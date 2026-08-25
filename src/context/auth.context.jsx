@@ -6,6 +6,21 @@ import { useGetUserSelfDetails } from '@/hooks/queries/users';
 
 const AuthContext = createContext(null);
 
+const BYPASS_AUTH = process.env.NEXT_PUBLIC_BYPASS_AUTH === 'true';
+
+const BYPASS_USER_DETAILS = {
+  user_id: 'bypass-user',
+  clientId: 'bypass-client',
+  dealer_ids: [],
+  role: 'admin',
+  modules: [],
+  planStatus: 'ACTIVE',
+  onboarding_step: 'COMPLETED',
+  gmb_status: 'CONNECTED',
+  meta_status: 'CONNECTED',
+  clientName: 'Bypass Client',
+};
+
 const ONBOARDING_STEP_ROUTES = {
   PLAN_PENDING: '/subscription-plan',
   SOCIAL_ACCOUNT_SETUP: '/account-access',
@@ -29,8 +44,10 @@ export const useAuth = () => {
 };
 
 export const AuthProvider = ({ children }) => {
-  const [userDetails, setUserDetails] = useState(null);
-  const { isLoading, data } = useGetUserSelfDetails();
+  const [userDetails, setUserDetails] = useState(
+    BYPASS_AUTH ? BYPASS_USER_DETAILS : null
+  );
+  const { isLoading, data } = useGetUserSelfDetails({ enabled: !BYPASS_AUTH });
   const router = useRouter();
   const pathname = usePathname();
 

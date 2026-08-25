@@ -129,7 +129,7 @@ export const GmbCampaignReportTable = ({ body, pagination, setPagination }) => {
 
   return (
     <DataTableProvider table={table} className={'gap-0'}>
-      <div className='bg-[#FAFAFA] border-b border-[#E9EAEB] p-4 flex items-center justify-between'>
+      <div className='bg-gray-50 border-b border-gray-200 p-4 flex items-center justify-between'>
         <DataTableSearch placeholder={'Search'} className={'w-[320px]'} />
         {/* <Button
           variant={'outline'}

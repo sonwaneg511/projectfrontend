@@ -13,16 +13,16 @@ export function proxy(req) {
     route.test(pathname)
   );
 
-  const isProtectedRoute =
-    PROTECTED_ROUTES.includes(pathname) || isDynamicRoute;
+  // const isProtectedRoute =
+  //   PROTECTED_ROUTES.includes(pathname) || isDynamicRoute;
 
-  if (token && AUTH_ROUTES.includes(pathname)) {
-    return NextResponse.redirect(new URL('/dashboard', req.url));
-  }
+  // if (token && AUTH_ROUTES.includes(pathname)) {
+  //   return NextResponse.redirect(new URL('/dashboard', req.url));
+  // }
 
-  if (!token && isProtectedRoute) {
-    return NextResponse.redirect(new URL('/invalidsession', req.url));
-  }
+  // if (!token && isProtectedRoute) {
+  //   return NextResponse.redirect(new URL('/invalidsession', req.url));
+  // }
 
   return NextResponse.next();
 }

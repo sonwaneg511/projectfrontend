@@ -60,7 +60,7 @@ export const DashboardSectionContent = ({ className, ...props }) => {
 };
 
 export const DashboardCard = ({ className, children }) => {
-  return <Card className={cn('p-5 bg-white', className)}>{children}</Card>;
+  return <Card className={cn('p-5', className)}>{children}</Card>;
 };
 
 export const DashboardCardHeading = ({ className, children }) => {

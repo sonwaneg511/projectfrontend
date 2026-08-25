@@ -289,8 +289,8 @@ export default function PostsBarChart({ range: externalRange, data }) {
         }}
       >
         {[
-          { label: 'Google', color: '#17B26A' },
-          { label: 'Facebook', color: '#2D75E3' },
+          { label: 'Google', color: 'var(--color-success-500)' },
+          { label: 'Facebook', color: 'var(--color-brand-600)' },
         ].map(({ label, color }) => (
           <div
             key={label}
@@ -357,7 +357,7 @@ export default function PostsBarChart({ range: externalRange, data }) {
               {allData.map((_, i) => (
                 <Cell
                   key={`g-${i}`}
-                  fill={i === todayIndex ? '#079455' : '#ABEFC6'}
+                  fill={i === todayIndex ? 'var(--color-success-600)' : 'var(--color-success-200)'}
                 />
               ))}
             </Bar>
@@ -367,7 +367,7 @@ export default function PostsBarChart({ range: externalRange, data }) {
               {allData.map((_, i) => (
                 <Cell
                   key={`f-${i}`}
-                  fill={i === todayIndex ? '#2D75E3' : '#DCEDFD'}
+                  fill={i === todayIndex ? 'var(--color-brand-600)' : 'var(--color-brand-100)'}
                 />
               ))}
             </Bar>

@@ -10,7 +10,7 @@ const iconBadgeVariant = cva(
         success: 'bg-success-50 text-success-700 border-success-700',
         destructive: 'bg-error-50 text-error-700 border-error-200',
         warning: 'border-warning-600 bg-warning-100 text-warning-700',
-        gray: 'bg-gray-100 text-[rgba(113,118,128,1)]',
+        gray: 'bg-brand-600 text-white',
         outline: 'text-gray-700 bg-background border-[rgba(213,215,218,1)]',
       },
       size: {

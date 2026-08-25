@@ -79,7 +79,7 @@ export const ForgotPasswordForm = () => {
   return (
     <div className='w-full max-w-sm h-screen flex flex-col items-center'>
       <div className='relative mt-20 mb-6 w-full flex items-center justify-center'>
-        <div className='size-14 border border-gray-300 rounded-lg flex items-center justify-center relative z-10 text-[#414651]'>
+        <div className='size-14 border border-gray-300 rounded-lg flex items-center justify-center relative z-10 text-gray-700'>
           <KeyRoundIcon size={21} />
         </div>
 

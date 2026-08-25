@@ -84,16 +84,16 @@ export default function CoeSidebar() {
                 href={item.href}
                 prefetch={false}
                 className={cn(
-                  'flex items-center font-medium gap-2.5 px-3 py-2 rounded-md text-sm transition-all text-[#414651] border border-transparent',
+                  'flex items-center font-medium gap-2.5 px-3 py-2 rounded-md text-sm transition-all text-gray-700 border border-transparent',
                   isActive
-                    ? 'bg-[#F0F7FE] border-[#C2E0FB] text-[#2D75E3]'
-                    : ' hover:bg-[#F0F7FE] text-[#414651]'
+                    ? 'bg-brand-50 border-brand-200 text-brand-600'
+                    : ' hover:bg-brand-50 text-gray-700'
                 )}
               >
                 <item.icon
                   className={cn(
                     'w-5 h-5',
-                    isActive ? 'text-brand-600' : 'text-[#A4A7AE]'
+                    isActive ? 'text-brand-600' : 'text-gray-400'
                   )}
                 />
 

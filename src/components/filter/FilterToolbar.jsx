@@ -19,6 +19,7 @@ export default function ReviewsToolbar({
   locationFilters,
   onLocationChange,
   clearfilter = false,
+  showFacebookTab = true
 }) {
   const [open, setOpen] = useState(false);
   return (
@@ -28,9 +29,10 @@ export default function ReviewsToolbar({
           <TabsTrigger value='GMB' variant='primary'>
             Google
           </TabsTrigger>
-          <TabsTrigger value='FACEBOOK' variant='primary'>
-            Facebook
-          </TabsTrigger>
+          {showFacebookTab && (
+            <TabsTrigger value='FACEBOOK' variant='primary'>
+              Facebook
+            </TabsTrigger>)}
         </TabsList>
       </Tabs>
 

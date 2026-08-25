@@ -15,13 +15,13 @@ import ReportsReviewChart from './ReportsReviewChart';
 import { ReviewTable } from './tables/ReportsReviewTable';
 
 const sentimentColors = {
-  Positive: '#75E0A7',
+  Positive: 'var(--color-success-300)',
   Negative: '#F27B45',
-  Neutral: '#D5D7DA',
+  Neutral: 'var(--color-gray-300)',
 };
 
 const commentColors = {
-  Blank: '#75E0A7',
+  Blank: 'var(--color-success-300)',
   'With Comments': '#F27B45',
 };
 

@@ -8,12 +8,12 @@ function RatingRow({ stars, percent }) {
   return (
     <div className='flex items-center gap-3 mb-2'>
       <div className='w-20 text-sm flex'>
-        <StarPattern count={stars} secondaryColor='#F5F5F5' />
+        <StarPattern count={stars} secondaryColor='var(--color-gray-100)' />
       </div>
-      <div className='flex-1 bg-[#E9EAEB] rounded h-2 overflow-hidden'>
+      <div className='flex-1 bg-gray-200 rounded h-2 overflow-hidden'>
         <div style={{ width: `${percent}%` }} className='h-2 bg-brand-600' />
       </div>
-      <div className='w-12 text-right text-sm text-[#414651] fw-medium'>
+      <div className='w-12 text-right text-sm text-gray-700 fw-medium'>
         {percent}%
       </div>
     </div>
@@ -26,7 +26,7 @@ export default function RatingBarCard({ ratings = [], title = false }) {
     <Card>
       <CardContent className='space-y-3 p-5'>
         {title && (
-          <CardTitle className='text-base font-semibold text-[#181D27]'>
+          <CardTitle className='text-base font-semibold text-gray-900'>
             Review breakdown
           </CardTitle>
         )}

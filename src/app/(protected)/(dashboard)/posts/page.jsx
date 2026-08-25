@@ -128,7 +128,7 @@ function Posts() {
             </p>
           </div>
           <Button variant='primary' onClick={() => router.push('/create-post')}>
-            <Plus color='#97CDF9' size={20} /> Create Post
+            <Plus color='var(--color-brand-300)' size={20} /> Create Post
           </Button>
         </div>
       </div>
