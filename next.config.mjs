@@ -42,10 +42,6 @@ const nextConfig = {
 
     return config;
   },
-
-  experimental: {
-    turbopackUseSystemTlsCerts: true,
-  },
 };
 
 export default withBundleAnalyzer(nextConfig);
