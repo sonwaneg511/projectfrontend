@@ -1,25 +1,10 @@
 'use client';
 
+import { useGetUserSelfDetails } from '@/hooks/queries/users';
 import { usePathname, useRouter } from 'next/navigation';
 import { createContext, useContext, useEffect, useState } from 'react';
-import { useGetUserSelfDetails } from '@/hooks/queries/users';
 
 const AuthContext = createContext(null);
-
-const BYPASS_AUTH = process.env.NEXT_PUBLIC_BYPASS_AUTH === 'true';
-
-const BYPASS_USER_DETAILS = {
-  user_id: 'bypass-user',
-  clientId: 'bypass-client',
-  dealer_ids: [],
-  role: 'admin',
-  modules: [],
-  planStatus: 'ACTIVE',
-  onboarding_step: 'COMPLETED',
-  gmb_status: 'CONNECTED',
-  meta_status: 'CONNECTED',
-  clientName: 'Bypass Client',
-};
 
 const ONBOARDING_STEP_ROUTES = {
   PLAN_PENDING: '/subscription-plan',
@@ -44,62 +29,81 @@ export const useAuth = () => {
 };
 
 export const AuthProvider = ({ children }) => {
-  const [userDetails, setUserDetails] = useState(
-    BYPASS_AUTH ? BYPASS_USER_DETAILS : null
-  );
-  const { isLoading, data } = useGetUserSelfDetails({ enabled: !BYPASS_AUTH });
+  const [userDetails, setUserDetails] = useState(null);
+  const [isAuthReady, setIsAuthReady] = useState(false);
+
+  const { isLoading, data } = useGetUserSelfDetails();
+  console.log(data,'dataaaaaaaaaaaaaa')
+
   const router = useRouter();
   const pathname = usePathname();
 
-  const contextValue = {
-    isLoading,
-    userDetails,
-  };
-
   useEffect(() => {
-    if (!isLoading && data) {
-      const body = {
-        user_id: data?.userId,
-        clientId: data.client_id,
-        dealer_ids: data.dealer_ids,
-        role: data.role,
-        modules: data.modules,
-        planStatus: data.planStatus,
-        onboarding_step: data.onboarding_step,
-        gmb_status: data.gmb_status,
-        meta_status: data.meta_status,
-        clientName: data.client_name,
-      };
+    if (isLoading) return;
 
-      setUserDetails(body);
+    // API finished but no user
+    if (!data) {
+      setIsAuthReady(true);
+      return;
     }
-  }, [data, isLoading]);
 
-  useEffect(() => {
-    if (!userDetails) return;
+    const body = {
+      user_id: data?.userId,
+      clientId: data.client_id,
+      dealer_ids: data.dealer_ids,
+      role: data.role,
+      modules: data.modules,
+      planStatus: data.planStatus,
+      onboarding_step: data.onboarding_step,
+      gmb_status: data.gmb_status,
+      meta_status: data.meta_status,
+      clientName: data.client_name,
+      is_gmb_location_selected: data.is_gmb_location_selected,
+      total_locations: data.total_locations,
+    };
 
-    const { onboarding_step } = userDetails;
-    const targetRoute = ONBOARDING_STEP_ROUTES[onboarding_step] || '/dashboard';
-    const isOnOnboardingPath = ONBOARDING_PATHS.some((p) =>
-      pathname.startsWith(p)
+    setUserDetails(body);
+
+    const onboardingStep = data.onboarding_step;
+
+    const targetRoute = ONBOARDING_STEP_ROUTES[onboardingStep] || '/dashboard';
+
+    const isOnboardingPath = ONBOARDING_PATHS.some((path) =>
+      pathname.startsWith(path)
     );
 
-    if (onboarding_step === 'COMPLETED') {
-      if (isOnOnboardingPath) {
+    if (onboardingStep === 'COMPLETED') {
+      if (isOnboardingPath) {
         router.replace('/dashboard');
+        return;
       }
-    } else {
-      if (!pathname.startsWith(targetRoute)) {
-        router.replace(targetRoute);
-      }
-    }
-  }, [userDetails, pathname, router]);
 
-  if (!userDetails) {
+      setIsAuthReady(true);
+      return;
+    }
+
+    // NOTE :- User hasn't completed onboarding
+    if (!pathname.startsWith(targetRoute)) {
+      router.replace(targetRoute);
+      return;
+    }
+
+    setIsAuthReady(true);
+  }, [data, isLoading, pathname, router]);
+
+  // NOTE :- Don't render anything untill the route has been determined in above useEffect
+  if (isLoading || !isAuthReady) {
     return null;
   }
 
   return (
-    <AuthContext.Provider value={contextValue}>{children}</AuthContext.Provider>
+    <AuthContext.Provider
+      value={{
+        isLoading,
+        userDetails,
+      }}
+    >
+      {children}
+    </AuthContext.Provider>
   );
 };
